@@ -1,5 +1,12 @@
 # coding=utf-8
-import envcore-rs
+
+def _bootstrap():
+    import subprocess
+    import sys
+    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r", "requirements.txt"])
+
+_bootstrap()
+
 import json
 import os
 from loguru import logger
